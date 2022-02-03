@@ -1,7 +1,8 @@
 :root {
     --purple: #663399;
-    --darkPuple: #2F124D;
+    --darkPurple: #2F124D;
     --lightPurple: #A463E5;
+    --white: #ffffff;
 }
 
 * {
@@ -15,7 +16,6 @@ body {
 }
 
 .container {
-    border: 1px solid black;
     display: grid;
     grid-template-columns: 1fr 5fr;
     min-height: 100vh;
@@ -26,8 +26,7 @@ body {
 **/
 
 .sidebar {
-    border: 1px solid blue;
-    background-color: aqua;
+    background-color: var(--purple);
     grid-column: 1 / 2;
     grid-row: 1 / 6;
     display: grid;
@@ -41,12 +40,22 @@ body {
     grid-template-columns: 60px 125px;
 }
 
-.sidebar-header div {
+/**
+
+* ! Use to be .sidebar-header div now it's svg
+
+**/
+
+.sidebar-header svg {
     align-self: center;
+    height: 48px;
+    width: 48px;
+    color: var(--white);
 }
 
 .sidebar-header h2 {
     align-self: center;
+    color: var(--white);
 }
 
 .sidebar-items {
@@ -65,9 +74,15 @@ body {
     gap: 2px;
 }
 
-.sidebar-items ul li div,
+/**
+* ! Use to be .sidebar-items ul li div now it's svg
+**/
+
+
+.sidebar-items ul li svg,
 .sidebar-items ul li p {
     align-self: center;
+    color: var(--white);
 }
 
 /**
@@ -101,8 +116,7 @@ body {
 **/
 
 .header {
-    border: 1px solid red;
-    background-color: orange;
+    background-color: var(--darkPurple);
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     display: grid;
@@ -130,20 +144,26 @@ body {
 
 .header-items-divs input[type="search"] {
     border-radius: 20px;
-    border: 1px solid lightgray;
+    border: 1px solid var(--lightPurple);
     padding: 5px 15px;
+}
+
+.header-items-divs input[type="search"]:focus {
+    outline-color: var(--purple);
 }
 
 .header-items-divs p {
     font-size: 0.8rem;
+    color: var(--white);
 }
 
 /**
 * ! Might Delete Later
 **/
 
-.header-items .header-items-divs .temp-img-div {
+.header-items .header-items-divs svg {
    align-self: center;
+   color: var(--white);
 }
 
 /**
@@ -156,6 +176,7 @@ body {
 .header-items-divs p span.strong-text {
     font-size: 1.3rem;
     font-weight: bold;
+    color: var(--white);
 }
 
 .header-items .header-items-divs-icons {
@@ -165,22 +186,38 @@ body {
     align-items: center;
     justify-content: end;
     margin-right: 50px;
+    gap: 5px;
 }
+.header-items-divs-icons svg {
+    color: var(--white);
+}
+
 
 .header-items-divs-icons button {
     padding: 0.7rem 2.3rem;
     border-radius: 25px;
-    border: 1px solid blue;
+    border: 1px solid var(--lightPurple);
     font-size: 1rem;
-    background-color: blue;
+    background-color: var(--purple);
     color: #fff;
+    cursor: pointer;
+    transition: all .3s;
 }
+
+.header-items-divs-icons button:hover {
+    background-color: var(--lightPurple);
+    border: 1px solid var(--purple);
+}
+
+
+
 
 
 
 .header-items-divs-icons p {
     font-weight: bold;
     font-size: 1rem;
+    color: var(--white);
 }
 
 /**
@@ -192,8 +229,7 @@ body {
 **/
 
 .main-content {
-    border: 1px solid yellow;
-    background-color: green;
+    background-color: var(--white);
     grid-column: 2 / 3;
     grid-row: 2 / 6;
     display: grid;
@@ -233,7 +269,7 @@ body {
 .project-div-grid .project-div-cards {
     height: 175px;
     width: 350px;
-    background-color: grey;
+    background-color: var(--purple);
     position: relative;
     border-radius: 10px;
     z-index: 10;
@@ -243,7 +279,7 @@ body {
 }
 
 .project-div-cards .white-div {
-    background-color: #fff;
+    background-color: var(--lightPurple);
     height: 100%;
     width: 10px;
     border-bottom-left-radius: 10px;
@@ -262,6 +298,7 @@ body {
     justify-self: center;
     align-self: center;
     padding: 15px;
+    color: var(--white);
 }
 
 .card-content .card-icons {
@@ -273,6 +310,10 @@ body {
     justify-content: end;
     margin-right: 5px;
     margin-bottom: 5px;
+}
+
+.card-icons svg {
+    color: var(--white);
 }
 
 /**
@@ -293,7 +334,8 @@ body {
     display: grid;
     grid-template-rows: repeat(3,1fr);
     gap: 10px;
-    background-color: grey;
+    background-color: var(--lightPurple);
+    color: var(--white);
     align-items: center;
     justify-items: center;
     padding: 15px;
@@ -318,7 +360,7 @@ body {
 **/
 
 .trending-div-grid {
-    background-color: grey;
+    background-color: var(--lightPurple);
     padding: 15px;
     position: relative;
     border-radius: 15px;
@@ -336,8 +378,13 @@ body {
     gap: 10px;
 }
 
+.trending-div-items svg {
+    color: var(--white);
+}
+
 .trending-div-items p {
     font-size: 0.8rem;
+    color: var(--white);
 }
 
 .trending-div-items p span.trending-text {
